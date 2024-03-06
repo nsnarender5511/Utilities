@@ -1,4 +1,4 @@
-package com.narender.MultiThreadingBasics.ThreadCoopration;
+package com.narender.MultiThreadingBasics.ExecuterService;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,13 +16,13 @@ public class Task1 implements Runnable{
             objectOfTask.setValue( objectOfTask.getValue() - 1);
 
             try {
-                TimeUnit.MILLISECONDS.sleep(10);
+                TimeUnit.SECONDS.sleep(5);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            if(objectOfTask.getValue() == 55){
+            /*if(objectOfTask.getValue() == 55){
                 Thread.currentThread().interrupt();
-            }
+            }*/
         }
     }
 

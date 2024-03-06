@@ -1,4 +1,4 @@
-package com.narender.MultiThreadingBasics.ThreadCoopration;
+package com.narender.MultiThreadingBasics.ExecuterService;
 
 import java.util.concurrent.TimeUnit;
 
@@ -22,14 +22,14 @@ public class Task2 implements Runnable{
                 System.out.println("Thread #2 || Waiting.......  :  "+ objectOfTask.getValue());
             }
             try {
-                TimeUnit.MILLISECONDS.sleep(10);
+                TimeUnit.SECONDS.sleep(15);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
 
-            if(i++ > 50){
+            /*if(i++ > 50){
                 Thread.currentThread().interrupt();
-            }
+            }*/
 
         }
     }
