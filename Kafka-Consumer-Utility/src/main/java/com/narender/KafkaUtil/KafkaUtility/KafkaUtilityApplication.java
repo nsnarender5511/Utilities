@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
+import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
@@ -35,7 +36,7 @@ public class KafkaUtilityApplication {
 		int i=0;
 		while (true) {
 			i++;
-			ConsumerRecords<String, String> records = consumer.poll(Long.MAX_VALUE);
+			ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
 			process(records, i); // application-specific processing
 			consumer.commitSync();
 
